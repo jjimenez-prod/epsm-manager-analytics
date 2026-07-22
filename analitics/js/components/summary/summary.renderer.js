@@ -1,7 +1,17 @@
 'use strict';
 
+/**
+ * Renderer: Summary
+ * Responsibility: Renders the dashboard KPI Summary markup.
+ * Input: The Summary container and a data object with KPI presentation data.
+ * Output: The Summary HTML inside the provided container.
+ */
 export function renderSummary(container, data) {
-  const [production, dough, deviation] = data.cards;
+  if (!container || !data || !Array.isArray(data.kpis) || data.kpis.length !== 3 || data.kpis.some((kpi) => !kpi || typeof kpi !== 'object')) {
+    return;
+  }
+
+  const [production, dough, deviation] = data.kpis;
 
   container.innerHTML = `
     <section class="kpi-grid" aria-label="Indicadores principales">
@@ -10,4 +20,6 @@ export function renderSummary(container, data) {
       <article class="kpi-card ${deviation.variant}"><div class="metric-icon"><svg><use href="#i-${deviation.icon}"/></svg></div><div class="metric"><b>${deviation.title}</b><strong>${deviation.value} <small>${deviation.unit}</small></strong><span>${deviation.description}</span></div><div class="metric-side"><strong class="${deviation.comparisonClass}">${deviation.comparison}</strong><small>${deviation.reference}</small><em class="tag ${deviation.statusClass}">${deviation.status}</em></div></article>
     </section>
   `;
+
+  return;
 }

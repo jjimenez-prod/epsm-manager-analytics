@@ -2,8 +2,14 @@
 
 import { renderSummary } from './summary.renderer.js';
 
+/**
+ * Component: Summary
+ * Responsibility: Coordinates rendering for the dashboard KPI Summary section.
+ * Owns: The Summary container lookup and Summary presentation data.
+ * Does not own: Dashboard layout, styling, data services, or KPI calculations.
+ */
 const summaryData = {
-  cards: [
+  kpis: [
     {
       variant: 'red',
       icon: 'pizza',
@@ -48,5 +54,12 @@ const summaryData = {
 
 export function initializeSummary() {
   const container = document.querySelector('#summary-root');
-  return renderSummary(container, summaryData);
+
+  if (!container) {
+    console.warn('[Summary] Container "#summary-root" was not found.');
+    return;
+  }
+
+  const data = summaryData;
+  return renderSummary(container, data);
 }

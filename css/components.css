@@ -1,0 +1,505 @@
+/* ==========================================================
+   SHARED PANELS AND KPI CARDS
+   ========================================================== */
+.panel{
+    border:1px solid var(--line);
+    border-radius:9px;
+    background:#fffdfa;
+    overflow:hidden
+}
+
+.kpi-card{
+    height:147px;
+    border:1px solid #eee2d7;
+    border-radius:9px;
+    display:flex;
+    align-items:center;
+    padding:23px 15px;
+    gap:20px;
+    background:linear-gradient(120deg,#fffaf6,#fffefa)
+}
+
+.kpi-card.green{
+    background:linear-gradient(120deg,#fbfdf9,#fffefa);
+    border-color:#dfe9d9
+}
+
+.kpi-card.purple{
+    background:linear-gradient(120deg,#fcf8ff,#fffefe);
+    border-color:#eadff0
+}
+
+.metric-icon{
+    width:75px;
+    height:75px;
+    flex:0 0 75px;
+    border-radius:20px;
+    display:grid;
+    place-items:center;
+    background:#ffe7dc;
+    color:#cf0707
+}
+
+.metric-icon svg{
+    width:44px;
+    height:44px;
+    stroke-width:1.4
+}
+
+.metric-icon span{
+    font-size:43px;
+    line-height:1
+}
+
+.green .metric-icon{
+    color:#14672b;
+    background:#e9f3e3
+}
+
+.purple .metric-icon{
+    color:#5d2483;
+    background:#f0e8f6
+}
+
+.metric{
+    align-self:stretch;
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+    min-width:0
+}
+
+.metric b{
+    font-size:13px
+}
+
+.metric strong{
+    font-size:31px;
+    line-height:35px;
+    letter-spacing:-.7px;
+    white-space:nowrap
+}
+
+.metric strong small{
+    font-size:14px;
+    letter-spacing:0
+}
+
+.metric span{
+    font-size:13px;
+    color:#353d39;
+    white-space:nowrap
+}
+
+.metric-side{
+    align-self:stretch;
+    display:flex;
+    flex-direction:column;
+    text-align:right;
+    align-items:flex-end
+}
+
+.metric-side>strong{
+    margin-top:14px;
+    border:1px solid #e7ebdf;
+    background:#f8faf4;
+    padding:8px 9px 4px;
+    border-radius:9px 9px 0 0;
+    font-size:15px;
+    white-space:nowrap
+}
+
+.metric-side>small{
+    background:#f8faf4;
+    border:1px solid #e7ebdf;
+    border-top:0;
+    border-radius:0 0 9px 9px;
+    padding:0 8px 7px;
+    color:#666;
+    font-size:10px;
+    white-space:nowrap
+}
+
+.metric-side em{
+    margin-top:auto
+}
+
+.positive{
+    color:#087538
+}
+
+.negative{
+    color:#d30a0a
+}
+
+.tag{
+    border-radius:7px;
+    padding:5px 11px;
+    font-size:11px;
+    font-style:normal;
+    font-weight:600;
+    line-height:1;
+    white-space:nowrap
+}
+
+.success{
+    color:#075d26;
+    background:#eaf5e8;
+    border:1px solid #d7ead3
+}
+
+.warn{
+    color:#bd5a00;
+    background:#fff6e2;
+    border:1px solid #fbe8b9
+}
+
+.danger{
+    color:#c80b0b;
+    background:#ffe9e7;
+    border:1px solid #f8d6d4
+}
+
+/* ==========================================================
+   INSIGHTS MODULE
+   ========================================================== */
+.insights{
+    height:123px;
+    margin-top:14px;
+    position:relative;
+    padding:20px
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:16px
+}
+
+.section-title:first-letter{
+    font-size:26px
+}
+
+.orange{
+    color:#d74b00
+}
+
+.insight-list{
+    position:absolute;
+    left:20px;
+    right:190px;
+    bottom:17px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr)
+}
+
+.insight-list p{
+    border-right:1px solid #efdcc8;
+    margin:0;
+    padding:5px 20px;
+    font-size:13px;
+    line-height:21px
+}
+
+.insight-list p:last-child{
+    border:0
+}
+
+.insight-list b{
+    color:#068034;
+    font-size:31px;
+    float:left;
+    line-height:36px;
+    margin-right:17px
+}
+
+.insight-list p:nth-child(3) b{
+    color:#e99000
+}
+
+.button-outline.small{
+    position:absolute;
+    right:20px;
+    top:29px;
+    height:40px
+}
+
+/* ==========================================================
+   DATA TABLES AND PANEL ACTIONS
+   ========================================================== */
+.panel-header{
+    height:60px;
+    display:flex;
+    align-items:center;
+    padding:0 18px;
+    border-bottom:1px solid #eadfd6
+}
+
+.panel-header h2{
+    font-size:16px;
+    color:#d50606;
+    margin:0;
+    display:flex;
+    align-items:center;
+    gap:13px
+}
+
+.panel-header h2 span{
+    font-size:27px
+}
+
+.operators .panel-header h2{
+    color:#4c207a
+}
+
+.search{
+    margin-left:auto;
+    width:212px;
+    height:35px;
+    border:1px solid #e2ded9;
+    background:#fff;
+    border-radius:6px;
+    display:flex;
+    align-items:center;
+    padding:0 9px
+}
+
+.search input{
+    border:0;
+    outline:0;
+    width:100%;
+    font-size:12px;
+    background:transparent
+}
+
+.search svg{
+    width:17px
+}
+
+.table-panel table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:12px
+}
+
+.table-panel th{
+    text-align:left;
+    font-size:11px;
+    height:33px;
+    background:#fcf7f2;
+    border-bottom:1px solid #eee5dd;
+    padding:0 18px;
+    white-space:nowrap
+}
+
+.operators th{
+    background:#fbf8fc
+}
+
+.table-panel td{
+    height:37px;
+    padding:0 18px;
+    border-bottom:1px solid #eee8e2;
+    white-space:nowrap;
+    font-weight:500
+}
+
+.operators td{
+    height:37px
+}
+
+.table-panel tbody tr:last-child td{
+    border-bottom:0
+}
+
+.status-dot{
+    display:inline-block;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#037537;
+    margin-left:7px
+}
+
+.red-dot{
+    background:#d30a11
+}
+
+.panel-footer{
+    height:38px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#cf0707;
+    padding:0 15px;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:700;
+    border-top:1px solid #eee6df
+}
+
+.panel-footer svg{
+    width:16px
+}
+
+.operators .panel-footer{
+    color:#4c207a
+}
+
+/* ==========================================================
+   PRODUCTION DETAIL MODULE
+   ========================================================== */
+.details{
+    margin-top:15px
+}
+
+.day-detail{
+    padding:0 18px 7px;
+    background:linear-gradient(90deg,#fffdf9,#fffefa)
+}
+
+.day-detail h3{
+    height:28px;
+    margin:0;
+    color:#d40909;
+    font-size:13px;
+    display:flex;
+    align-items:end;
+    justify-content:space-between
+}
+
+.day-detail h3 span{
+    color:#213127;
+    font-size:20px
+}
+
+.shift-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:13px;
+    margin-top:2px
+}
+
+.shift{
+    height:112px;
+    border:1px solid #eee7df;
+    border-radius:9px;
+    background:#fffefa;
+    padding:12px;
+    display:flex;
+    align-items:flex-start;
+    gap:12px
+}
+
+.shift-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    flex:0 0 48px
+}
+
+.shift-icon svg{
+    width:29px;
+    height:29px
+}
+
+.sun{
+    color:#f18d00;
+    background:#fff3dd
+}
+
+.moon{
+    color:#173a6f;
+    background:#edf0fa
+}
+
+.shift p{
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+    font-size:12px;
+    line-height:14px
+}
+
+.shift p>b{
+    font-size:12px
+}
+
+.shift p>b small{
+    font-weight:400;
+    color:#5e6462;
+    margin-left:4px
+}
+
+.shift p>strong{
+    font-size:21px;
+    line-height:22px
+}
+
+.shift p>strong small{
+    font-size:12px
+}
+
+.shift p>span{
+    font-size:11px
+}
+
+.shift p em{
+    font-style:normal;
+    font-size:11px;
+    margin-top:3px;
+    white-space:nowrap
+}
+
+.shift p mark{
+    margin-left:12px;
+    padding:4px 11px;
+    background:#e6f2e2;
+    color:#075b25;
+    border-radius:5px
+}
+
+.shift>a{
+    align-self:flex-end;
+    margin-left:auto;
+    color:#d20909;
+    font-size:12px;
+    font-weight:700;
+    white-space:nowrap;
+    display:flex;
+    gap:6px;
+    align-items:center
+}
+
+.shift>a svg{
+    width:16px
+}
+
+.empty{
+    align-items:center
+}
+
+.empty p{
+    gap:10px
+}
+
+.collapsed{
+    height:33px;
+    border-top:1px solid #eee7df;
+    padding:0 20px;
+    color:#d40909;
+    font-size:13px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:space-between
+}
+
+.collapsed span{
+    color:#1a2d21;
+    font-size:19px
+}

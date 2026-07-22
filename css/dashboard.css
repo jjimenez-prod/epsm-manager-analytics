@@ -1,0 +1,83 @@
+/* ==========================================================
+   DESKTOP REFINEMENTS
+   ========================================================== */
+@media(min-width:1200px){
+.dashboard{
+    padding-top:22px
+}
+
+.production table th:nth-child(1),.production table td:nth-child(1){
+    padding-left:18px
+}
+
+.operators table th,.operators table td{
+    padding-left:16px;
+    padding-right:12px
+}
+
+}
+
+/* ==========================================================
+   COMPACT DESKTOP REFINEMENTS
+   ========================================================== */
+@media(max-width:1300px){
+.kpi-card{
+    gap:12px;
+    padding:18px 12px
+}
+
+.metric-icon{
+    width:62px;
+    height:62px;
+    flex-basis:62px
+}
+
+.metric strong{
+    font-size:27px
+}
+
+.metric-side>strong{
+    font-size:13px
+}
+
+.insight-list p{
+    padding-left:10px;
+    padding-right:10px
+}
+
+.table-panel th,.table-panel td{
+    padding-left:10px;
+    padding-right:10px
+}
+
+}
+
+/* ==========================================================
+   TABLET REFINEMENTS
+   ========================================================== */
+@media(max-width:950px){
+.insights{
+    height:auto
+}
+
+.insight-list{
+    position:static;
+    margin-top:15px;
+    grid-template-columns:1fr 1fr
+}
+
+.button-outline.small{
+    position:static;
+    margin-top:14px
+}
+
+.shift-grid{
+    grid-template-columns:1fr
+}
+
+.shift{
+    height:auto;
+    min-height:105px
+}
+
+}

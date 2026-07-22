@@ -1,0 +1,61 @@
+/* ==========================================================
+   DESIGN TOKENS
+   ========================================================== */
+:root{
+    --green:#003f25;
+    --green-2:#086331;
+    --red:#d80b0b;
+    --cream:#fffcf6;
+    --paper:#fffefa;
+    --ink:#10251b;
+    --muted:#53605b;
+    --line:#e9e1d6;
+    --orange:#df5b00;
+    --purple:#522486;
+    --soft-red:#fff7f3;
+    --soft-green:#f7fbf4;
+    --soft-purple:#fbf8ff;
+    --success:#057134;
+    --danger:#dc1010;
+    font-family:'DM Sans',Arial,sans-serif;
+    color:var(--ink);
+    font-synthesis:none
+}
+
+/* ==========================================================
+   GLOBAL RESET
+   ========================================================== */
+*{
+    box-sizing:border-box
+}
+
+body{
+    margin:0;
+    background:var(--cream);
+    font-size:14px
+}
+
+/* ==========================================================
+   GLOBAL ELEMENTS
+   ========================================================== */
+.icon-sprite{
+    display:none
+}
+
+svg{
+    width:20px;
+    height:20px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.9;
+    stroke-linecap:round;
+    stroke-linejoin:round
+}
+
+button,input{
+    font:inherit
+}
+
+button{
+    cursor:pointer
+}

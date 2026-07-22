@@ -1,105 +1,10 @@
 <!doctype html>
 <html lang="es">
-  <!-- =====================================================
-       DOCUMENT METADATA
-  ====================================================== -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="0; url=analitics/pages/dashboard.html" />
     <title>EPSM Manager Analytics</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/theme.css" />
-    <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/dashboard.css" />
   </head>
-  <body>
-    <!-- =====================================================
-         SVG ICON LIBRARY
-    ====================================================== -->
-    <svg class="icon-sprite" aria-hidden="true">
-      <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
-      <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 20v-1.5a4.5 4.5 0 0 0-4.5-4.5h-5A4.5 4.5 0 0 0 2 18.5V20"/><circle cx="9" cy="7" r="3.5"/><path d="M17 4.5a3.5 3.5 0 0 1 0 6.8M22 20v-1.5a4.5 4.5 0 0 0-3-4.25"/></symbol>
-      <symbol id="i-box" viewBox="0 0 24 24"><path d="m3 7 9-4 9 4v10l-9 4-9-4z"/><path d="m3 7 9 4 9-4M12 11v10"/></symbol>
-      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
-      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
-      <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.15 2.15-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.03 1.56v.1h-3.05v-.1A1.7 1.7 0 0 0 10.6 18.7a1.7 1.7 0 0 0-1.88.34l-.06.06-2.15-2.15.06-.06A1.7 1.7 0 0 0 6.9 15a1.7 1.7 0 0 0-1.56-1.03h-.1v-3.05h.1A1.7 1.7 0 0 0 6.9 9.9a1.7 1.7 0 0 0-.34-1.88L6.5 7.96l2.15-2.15.06.06a1.7 1.7 0 0 0 1.88.34 1.7 1.7 0 0 0 1.03-1.56v-.1h3.05v.1A1.7 1.7 0 0 0 15.7 6.2a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.15 2.15-.06.06a1.7 1.7 0 0 0-.34 1.88 1.7 1.7 0 0 0 1.56 1.03h.1v3.05h-.1A1.7 1.7 0 0 0 19.4 15Z"/></symbol>
-      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></symbol>
-      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></symbol>
-      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.7-4L3 10M4 5v5h5M4 13a8 8 0 0 0 14.7 4L21 14M20 19v-5h-5"/></symbol>
-      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
-      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-      <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.6 2.6 0 1 1 4.65 1.6c-1.15 1.4-2.15 1.53-2.15 3.4M12 17h.01"/></symbol>
-      <symbol id="i-pizza" viewBox="0 0 24 24"><path d="M4 20 12 3c3.8 1 6.6 3.8 8 8z"/><path d="M7.5 13.5h.01M12.5 11h.01M12 17h.01"/><circle cx="9" cy="15" r="1"/><circle cx="14.5" cy="12" r="1"/></symbol>
-      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><path d="m15 9 5-5M16 4h4v4"/></symbol>
-      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
-      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.4 15.2A8 8 0 0 1 8.8 3.6 8 8 0 1 0 20.4 15.2Z"/></symbol>
-    </svg>
-
-    <!-- =====================================================
-         APPLICATION SIDEBAR
-    ====================================================== -->
-    <aside class="sidebar">
-      <img class="brand" src="assets/logo.svg" alt="Trattoria EPSM Manager Analytics" />
-      <nav class="main-nav" aria-label="Navegación principal">
-        <a class="nav-link active" href="#"><svg><use href="#i-grid"/></svg>Dashboard</a>
-        <a class="nav-link" href="#"><svg><use href="#i-grid"/></svg>Producción</a>
-        <a class="nav-link" href="#"><svg><use href="#i-users"/></svg>Operadores</a>
-        <a class="nav-link" href="#"><svg><use href="#i-box"/></svg>Productos</a>
-        <a class="nav-link" href="#"><svg><use href="#i-file"/></svg>Reportes</a>
-        <a class="nav-link" href="#"><svg><use href="#i-bell"/></svg>Alertas</a>
-        <a class="nav-link" href="#"><svg><use href="#i-settings"/></svg>Configuración</a>
-      </nav>
-      <div class="sidebar-illustration" aria-hidden="true"><div class="plant">♧</div><div class="oven"><span>♨</span></div></div>
-      <div class="sidebar-footer">
-        <a class="nav-link" href="#"><svg><use href="#i-help"/></svg>Ayuda</a>
-        <div class="profile"><span class="avatar">GM</span><span><strong>Gerencia Milano</strong><small>Milano, IT</small></span><svg><use href="#i-chevron"/></svg></div>
-      </div>
-    </aside>
-
-    <!-- =====================================================
-         DASHBOARD CONTENT
-    ====================================================== -->
-    <main class="dashboard">
-      <header class="topbar">
-        <div><h1>Dashboard</h1><p>Resumen general de producción</p></div>
-        <div class="filters">
-          <label>Período analizado<span class="select-control"><svg><use href="#i-calendar"/></svg>Julio 2026<svg class="chevron"><use href="#i-chevron"/></svg></span></label>
-          <label>Referencia<span class="select-control wide"><span class="switch">⇄</span>Mes anterior (Junio 2026)<svg class="chevron"><use href="#i-chevron"/></svg></span></label>
-        </div>
-        <div class="refresh"><span>Última actualización</span><strong>28 Jul 2026 · 08:34</strong><em><i></i>Auto refresh cada 5 minutos</em></div>
-        <button class="button-outline"><svg><use href="#i-refresh"/></svg>Actualizar</button>
-      </header>
-
-      <!-- =====================================================
-           KPI SECTION
-      ====================================================== -->
-      <section class="kpi-grid" aria-label="Indicadores principales">
-        <article class="kpi-card red"><div class="metric-icon"><svg><use href="#i-pizza"/></svg></div><div class="metric"><b>Producción Total</b><strong>4.320 <small>unidades</small></strong><span>18 elaboraciones</span></div><div class="metric-side"><strong class="positive">▲ +6,4 %</strong><small>vs Junio 2026</small><em class="tag success">Excelente</em></div></article>
-        <article class="kpi-card green"><div class="metric-icon"><span>⚖</span></div><div class="metric"><b>Masa Utilizada</b><strong>812 <small>kg</small></strong><span>45 kg promedio / lote</span></div><div class="metric-side"><strong class="negative">▼ -3,1 %</strong><small>vs Junio 2026</small><em class="tag warn">Esperado</em></div></article>
-        <article class="kpi-card purple"><div class="metric-icon"><svg><use href="#i-target"/></svg></div><div class="metric"><b>Desviación Promedio</b><strong>0,84 <small>%</small></strong><span>Desviación sobre objetivo</span></div><div class="metric-side"><strong class="positive">▼ -0,12 pts</strong><small>vs Junio 2026</small><em class="tag success">Muy buena mejora</em></div></article>
-      </section>
-
-      <!-- =====================================================
-           INSIGHTS SECTION
-      ====================================================== -->
-      <section class="insights panel"><div class="section-title orange">♧ <strong>Insights principales</strong></div><div class="insight-list"><p><b>↗</b>Producción aumentó un 6,4 %<br>respecto al mes anterior.</p><p><b>✓</b>La desviación mejoró 0,12<br>puntos porcentuales.</p><p><b>♕</b><strong>Ana lidera</strong> el número de<br>elaboraciones este mes.</p><p><b>▣</b>El 23 de julio fue el día con<br>mayor producción.</p></div><button class="button-outline small">Ver todos los insights <svg><use href="#i-arrow"/></svg></button></section>
-
-      <!-- =====================================================
-           PRODUCTION AND OPERATORS SECTION
-      ====================================================== -->
-      <section class="data-grid">
-        <article class="panel table-panel production"><div class="panel-header"><h2><span>▣</span>Producción diaria</h2></div><table><thead><tr><th>Día</th><th>Producción</th><th>Masa utilizada</th><th>Desviación</th><th>vs Mes anterior</th><th></th></tr></thead><tbody><tr><td>21 Jul</td><td>1.240 unidades</td><td>52 kg</td><td>0,81 % <i class="status-dot"></i></td><td class="positive">▲ +8,0 %</td><td>⌄</td></tr><tr><td>22 Jul</td><td>980 unidades</td><td>44 kg</td><td>1,22 % <i class="status-dot red-dot"></i></td><td class="negative">▼ -4,3 %</td><td>⌄</td></tr><tr><td>23 Jul</td><td>1.350 unidades</td><td>58 kg</td><td>0,73 % <i class="status-dot"></i></td><td class="positive">▲ +12,1 %</td><td>⌄</td></tr><tr><td>24 Jul</td><td>890 unidades</td><td>39 kg</td><td>0,92 % <i class="status-dot"></i></td><td class="negative">▼ -6,2 %</td><td>⌄</td></tr><tr><td>25 Jul</td><td>—</td><td>—</td><td>—</td><td>—</td><td>⌄</td></tr></tbody></table><a class="panel-footer" href="#">Ver más días <svg><use href="#i-arrow"/></svg></a></article>
-        <article class="panel table-panel operators"><div class="panel-header"><h2><span>♧</span>Performance Operadores</h2><label class="search"><input placeholder="Buscar operador..."/><svg><use href="#i-search"/></svg></label></div><table><thead><tr><th>#</th><th>Operador</th><th>Elaboraciones</th><th>Desviación Prom.</th><th>vs Mes anterior</th><th>Estado</th></tr></thead><tbody><tr><td>🥇</td><td>Ana</td><td>18</td><td>0,84 %</td><td class="positive">▲ +3</td><td><span class="tag success">Bonus</span></td></tr><tr><td>🥈</td><td>Karin</td><td>15</td><td>0,84 %</td><td class="positive">▲ +1</td><td><span class="tag success">Bonus</span></td></tr><tr><td>🥉</td><td>Massimo</td><td>12</td><td>0,84 %</td><td class="negative">▼ -2</td><td><span class="tag success">Bonus</span></td></tr><tr><td>4</td><td>Luca</td><td>8</td><td>1,12 %</td><td class="negative">▼ -3</td><td><span class="tag danger">Sin bonus</span></td></tr><tr><td>5</td><td>Giulia</td><td>7</td><td>1,12 %</td><td class="negative">▼ -1</td><td><span class="tag danger">Sin bonus</span></td></tr></tbody></table><a class="panel-footer" href="#">Ver todos los operadores <svg><use href="#i-arrow"/></svg></a></article>
-      </section>
-
-      <!-- =====================================================
-           PRODUCTION DETAIL SECTION
-      ====================================================== -->
-      <section class="panel details"><div class="panel-header"><h2><span>▣</span>Detalle de producción</h2><label class="search"><input placeholder="Buscar fecha..."/><svg><use href="#i-calendar"/></svg></label></div><div class="day-detail"><h3>21 Julio 2026 <span>⌃</span></h3><div class="shift-grid"><article class="shift"><div class="shift-icon sun"><svg><use href="#i-sun"/></svg></div><p><b>Mañana</b> <small>(07:00 - 15:00)</small><strong>730 <small>unidades</small></strong><span>30 kg masa utilizada</span><em>0,81 % desviación <i class="status-dot"></i></em></p><a>Ver detalle <svg><use href="#i-arrow"/></svg></a></article><article class="shift"><div class="shift-icon sun"><svg><use href="#i-sun"/></svg></div><p><b>Tarde</b> <small>(15:00 - 23:00)</small><strong>510 <small>unidades</small></strong><span>22 kg masa utilizada</span><em>0,92 % desviación <i class="status-dot"></i></em></p><a>Ver detalle <svg><use href="#i-arrow"/></svg></a></article><article class="shift empty"><div class="shift-icon moon"><svg><use href="#i-moon"/></svg></div><p><b>Noche</b> <small>(23:00 - 07:00)</small><span>Sin producción registrada</span></p></article></div></div><div class="collapsed">20 Julio 2026 <span>⌄</span></div><div class="collapsed">19 Julio 2026 <span>⌄</span></div></section>
-    </main>
-    <script src="js/app.js"></script>
-  </body>
+  <body></body>
 </html>

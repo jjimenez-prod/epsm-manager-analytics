@@ -7,19 +7,25 @@
  * Output: The Summary HTML inside the provided container.
  */
 export function renderSummary(container, data) {
-  if (!container || !data || !Array.isArray(data.kpis) || data.kpis.length !== 3 || data.kpis.some((kpi) => !kpi || typeof kpi !== 'object')) {
+  if (!container || !data || !Array.isArray(data.kpis) || data.kpis.some((kpi) => !kpi || typeof kpi !== 'object')) {
     return;
   }
 
-  const [production, dough, deviation] = data.kpis;
+  const enabledKpis = data.kpis.filter((kpi) => kpi.enabled);
 
   container.innerHTML = `
     <section class="kpi-grid" aria-label="Indicadores principales">
-      <article class="kpi-card ${production.variant}"><div class="metric-icon"><svg><use href="#i-${production.icon}"/></svg></div><div class="metric"><b>${production.title}</b><strong>${production.value} <small>${production.unit}</small></strong><span>${production.description}</span></div><div class="metric-side"><strong class="${production.comparisonClass}">${production.comparison}</strong><small>${production.reference}</small><em class="tag ${production.statusClass}">${production.status}</em></div></article>
-      <article class="kpi-card ${dough.variant}"><div class="metric-icon"><span>⚖</span></div><div class="metric"><b>${dough.title}</b><strong>${dough.value} <small>${dough.unit}</small></strong><span>${dough.description}</span></div><div class="metric-side"><strong class="${dough.comparisonClass}">${dough.comparison}</strong><small>${dough.reference}</small><em class="tag ${dough.statusClass}">${dough.status}</em></div></article>
-      <article class="kpi-card ${deviation.variant}"><div class="metric-icon"><svg><use href="#i-${deviation.icon}"/></svg></div><div class="metric"><b>${deviation.title}</b><strong>${deviation.value} <small>${deviation.unit}</small></strong><span>${deviation.description}</span></div><div class="metric-side"><strong class="${deviation.comparisonClass}">${deviation.comparison}</strong><small>${deviation.reference}</small><em class="tag ${deviation.statusClass}">${deviation.status}</em></div></article>
+      ${enabledKpis.map(renderKpiCard).join('')}
     </section>
   `;
 
   return;
+}
+
+function renderKpiCard(kpi) {
+  const icon = kpi.icon === 'scale'
+    ? '<span>⚖</span>'
+    : `<svg><use href="#i-${kpi.icon}"/></svg>`;
+
+  return `<article class="kpi-card ${kpi.variant}"><div class="metric-icon">${icon}</div><div class="metric"><b>${kpi.title}</b><strong>${kpi.value} <small>${kpi.unit}</small></strong><span>${kpi.description}</span></div><div class="metric-side"><strong class="${kpi.comparisonClass}">${kpi.comparison}</strong><small>${kpi.reference}</small><em class="tag ${kpi.statusClass}">${kpi.status}</em></div></article>`;
 }

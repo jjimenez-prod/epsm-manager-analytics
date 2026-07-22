@@ -11,6 +11,8 @@ import { renderSummary } from './summary.renderer.js';
 const summaryData = {
   kpis: [
     {
+      id: 'production-total',
+      enabled: true,
       variant: 'red',
       icon: 'pizza',
       title: 'Producción Total',
@@ -24,6 +26,8 @@ const summaryData = {
       status: 'Excelente'
     },
     {
+      id: 'dough-used',
+      enabled: true,
       variant: 'green',
       icon: 'scale',
       title: 'Masa Utilizada',
@@ -37,6 +41,8 @@ const summaryData = {
       status: 'Esperado'
     },
     {
+      id: 'average-deviation',
+      enabled: true,
       variant: 'purple',
       icon: 'target',
       title: 'Desviación Promedio',
